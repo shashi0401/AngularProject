@@ -1,0 +1,27 @@
+<div class="container" [ngStyle]="{'background-color' : getColor()}">
+    <div class="row">Welcome to {{ compayName }}</div>
+    <div class="row">
+        <label class="success">Username </label>
+    </div>
+    <div class="row">
+        <!--<input type="text" value="username" (input)="onUpdateUsername($event)">
+        -->
+        <input type="text" [(ngModel)]="username">
+    </div>
+    <div class="row">
+        <label>Password</label>
+    </div>
+    <div class="row">
+        <input type="text" [(ngModel)]="password">
+    </div>
+    <div class="row">
+        <input (click)="onSubmitClick()" type="button" class="btn btn-primary " [disabled]="disabledBtn" value="Submit">
+    </div>
+    <div>
+        <p>Note</p>
+        <p *ngIf="welcomeMsg; else noWelcome">Welcome {{username}} !!!</p>
+        <ng-template #noWelcome>
+            <p>Please enter detail and press submit</p>
+        </ng-template>
+    </div>
+</div>
